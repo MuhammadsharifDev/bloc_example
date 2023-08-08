@@ -1,6 +1,14 @@
 part of 'home_bloc.dart';
 
-@immutable
-abstract class HomeState {}
 
-class HomeInitial extends HomeState {}
+
+class HomeState extends Equatable {
+  final int number;
+  const HomeState({ this.number=0});
+
+  HomeState copyWith({int? number})=>HomeState(number:number??this.number);
+
+  @override
+  List<Object?> get props=>[number];
+
+}
